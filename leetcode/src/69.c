@@ -5,17 +5,17 @@ int start=0;
         long long int ans=0;
         while(start <= end){
                long long int mid=(start+end)/2;
-               if(mid*mid == x){
-                         ans=mid;
-                         break;
+                long long int val=mid*mid;
+               if( val == x){
+                         return mid;
                 }
 //if mid is less than the square root of the number(x) store the value of mid in ans.
-               if( mid*mid < x){
+               if( val < x){
                          ans = mid;
                        start = mid+1;
                }
 //if mid is greater than the square root of the number(x) then ssign the value mid-1 to end.               
-               if( mid*mid > x){
+               if( val > x){
                        end = mid-1;
                }
         }
